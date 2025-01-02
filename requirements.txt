@@ -1,1 +1,8 @@
 Flask==3.0.3
+PyPDF2
+flask_cors
+reportlab
+supabase
+pikepdf
+python-dotenv
+docling
