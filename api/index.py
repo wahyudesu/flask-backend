@@ -57,14 +57,14 @@ def upload_file():
         for file_path in file_paths:
             # Convert PDF to Markdown
             markdown_content = convert_pdf(file_path)
-            embedding = pc.inference.embed(model="multilingual-e5-large",inputs=[markdown_content], parameters={"input_type": "passage", "truncate": "END"})
-            output_embedding = embedding[0]['values']
+            # embedding = pc.inference.embed(model="multilingual-e5-large",inputs=[markdown_content], parameters={"input_type": "passage", "truncate": "END"})
+            # output_embedding = embedding[0]['values']
             
             # Save to Supabase
             supabase.table('documents').insert({
                 'nameStudent': name_student,
                 'documentUrl': file_path,
-                'embedding': output_embedding 
+                'embedding': markdown_content 
             }).execute()
         
         # Return a successful response
