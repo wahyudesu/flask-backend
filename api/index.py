@@ -14,7 +14,7 @@ load_dotenv()
 # Env
 url: str = os.getenv("SUPABASE_URL")
 key: str = os.getenv("SUPABASE_KEY")
-pinecone_api_key: str = os.getenv("PINECONE_API_KEY")
+pinecone_api_key: str = os.getenv("PINECONE")
 
 # Initialize
 pc = Pinecone(api_key=pinecone_api_key)
